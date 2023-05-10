@@ -8,5 +8,50 @@
     <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Book-Tracker</h1>
+      </div>
+    </header>
+    <main>
+      <button class="btn btn-add">+ Add book</button>
+      <div class="modal active">
+        <div class="modal-header">
+          <h2>New Book</h2>
+          <button class="close-button">&times;</button>
+        </div>
+        <form action="#">
+          <div class="input">
+            <input
+              type="text"
+              name="title"
+              autocomplete="off"
+              required
+              placeholder="What is the title of the book?"
+            />
+          </div>
+          <div
+            class="input"
+            type="text"
+            name="author"
+            autocomplete="off"
+            required
+            placeholder="Who is the author of the book?"
+          ></div>
+          <div class="input"></div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        YvesConcepcion
+      </p>
+    </footer>
+    <div id="overlay"></div>
+  </body>
 </html>
