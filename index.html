@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Tracker</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
   </head>
   <body>
     <header>
@@ -15,11 +15,11 @@
       </div>
     </header>
     <main>
-      <button class="btn btn-add">+ Add book</button>
-      <div class="modal active">
+      <button data-modal-target="#modal" class="btn btn-add">+ Add book</button>
+      <div class="modal" id="modal">
         <div class="modal-header">
           <h2>New Book</h2>
-          <button class="close-button">&times;</button>
+          <button data-close-button class="close-button">&times;</button>
         </div>
         <form action="#">
           <div class="input">
