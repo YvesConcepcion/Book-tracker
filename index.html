@@ -20,7 +20,7 @@
         <div class="modal-content">
           <h2 class="modal-title">Add a new book</h2>
 
-          <form action="#">
+          <form action="#" id="form">
             <div class="input">
               <input
                 type="text"
@@ -28,6 +28,7 @@
                 autocomplete="off"
                 required
                 placeholder="Title"
+                id="title"
               />
             </div>
             <div class="input">
@@ -37,6 +38,7 @@
                 autocomplete="off"
                 required
                 placeholder="Author"
+                id="author"
               />
             </div>
             <div class="input">
@@ -46,15 +48,22 @@
                 autocomplete="off"
                 required
                 placeholder="Pages"
+                id="pages"
               />
             </div>
             <div class="is-read">
               <label for="is-read">Have you read it?</label>
-              <input type="checkbox" class="checkbox" id="isRead" />
+              <input
+                type="checkbox"
+                class="checkbox"
+                name="isRead"
+                id="is-read"
+              />
             </div>
             <button class="btn btn-submit" type="submit">Submit</button>
           </form>
         </div>
+        <div class="books-grid"></div>
       </div>
     </main>
     <footer>
