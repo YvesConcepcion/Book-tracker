@@ -10,37 +10,51 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <h1>Book-Tracker</h1>
+      <div class="header-container">
+        <h1>Book Tracker</h1>
       </div>
     </header>
-    <main>
+    <main class="main-container">
       <button data-modal-target="#modal" class="btn btn-add">+ Add book</button>
       <div class="modal" id="modal">
-        <div class="modal-header">
-          <h2>New Book</h2>
-          <button data-close-button class="close-button">&times;</button>
+        <div class="modal-content">
+          <h2 class="modal-title">Add a new book</h2>
+
+          <form action="#">
+            <div class="input">
+              <input
+                type="text"
+                name="title"
+                autocomplete="off"
+                required
+                placeholder="Title"
+              />
+            </div>
+            <div class="input">
+              <input
+                type="text"
+                name="author"
+                autocomplete="off"
+                required
+                placeholder="Author"
+              />
+            </div>
+            <div class="input">
+              <input
+                type="number"
+                name="pages"
+                autocomplete="off"
+                required
+                placeholder="Pages"
+              />
+            </div>
+            <div class="is-read">
+              <label for="is-read">Have you read it?</label>
+              <input type="checkbox" class="checkbox" id="isRead" />
+            </div>
+            <button class="btn btn-submit" type="submit">Submit</button>
+          </form>
         </div>
-        <form action="#">
-          <div class="input">
-            <input
-              type="text"
-              name="title"
-              autocomplete="off"
-              required
-              placeholder="What is the title of the book?"
-            />
-          </div>
-          <div
-            class="input"
-            type="text"
-            name="author"
-            autocomplete="off"
-            required
-            placeholder="Who is the author of the book?"
-          ></div>
-          <div class="input"></div>
-        </form>
       </div>
     </main>
     <footer>
