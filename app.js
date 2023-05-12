@@ -7,7 +7,7 @@ const form = document.getElementById("form");
 
 let myLibrary = [];
 
-form.addEventListener("submit", function (event) {
+const submit = form.addEventListener("submit", function (event) {
   event.preventDefault(); //Prevents the form from submmitting
   var title = document.getElementById("title").value;
   var author = document.getElementById("author").value;
@@ -64,3 +64,24 @@ overlay.addEventListener("click", () => {
 
 var divBook = document.createElement("div");
 divBook.setAttribute("id", "new-book");
+
+/*
+TODO LIST
+1. Use array data to create new book elements
+2. IF Submit is clicked = >
+3. Create new div with class of book-card
+4. Place div inside the books-grid div
+4. Add P element inside the div element with a class of title
+    add the book title to the P element
+5. Add P element inside the div element with a class of author
+    add the book author to the P element
+6. Add P element inside the div element with a class of pages
+    add the book pages inside the div element
+7. add Button element with "read-status" class
+    add read 
+8. add button element with "remove" class
+    add remove
+9. close the modal
+    disable overlay 
+    set active to 0
+*/

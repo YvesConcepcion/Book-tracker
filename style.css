@@ -1,7 +1,7 @@
 :root {
   --white: #fffbfb;
   --gray: #e8e8e8;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --shadow: rgba(0, 0, 0, 0.16) 0px 5px 5px;
 }
 
 /* CSS RESET */
@@ -17,6 +17,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: var(--gray);
+  font-weight: bold;
 }
 
 html {
@@ -130,7 +131,7 @@ input {
 
 /* BUTTONS */
 
-.btn-submit {
+.btn {
   appearance: none;
   background-color: #2ea44f;
   border: 1px solid rgba(27, 31, 35, 0.15);
@@ -154,28 +155,28 @@ input {
   white-space: nowrap;
 }
 
-.btn-submit :focus:not(:focus-visible):not(.focus-visible) {
+.btn:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
   outline: none;
 }
 
-.btn-submit :hover {
+.btn:hover {
   background-color: #2c974b;
 }
 
-.btn-submit :focus {
+.btn:focus {
   box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
   outline: none;
 }
 
-.btn-submit:disabled {
+.btn:disabled {
   background-color: #94d3a2;
   border-color: rgba(27, 31, 35, 0.1);
   color: rgba(255, 255, 255, 0.8);
   cursor: default;
 }
 
-.btn-submit:active {
+.btn:active {
   background-color: #298e46;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
@@ -254,4 +255,39 @@ input {
 .btn-add:disabled {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+#remove {
+  background-color: rgb(179, 11, 11);
+}
+
+#remove:hover {
+  background-color: rgb(170, 11, 11);
+}
+
+#remove:active {
+  background-color: rgb(160, 11, 11);
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+/*BOOK GRID */
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  border-radius: 10px;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  gap: 16px;
+}
+
+.books-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  align-content: center;
+  grid-gap: 20px;
 }
