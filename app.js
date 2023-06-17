@@ -7,57 +7,27 @@ const form = document.getElementById("form");
 
 let myLibrary = [];
 
-const submit = form.addEventListener("submit", function (event) {
-  event.preventDefault(); //Prevents the form from submmitting
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("pages").value;
-  let isRead = document.getElementById("is-read").checked;
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
 
-  let newBook = new Book(title, author, pages, isRead);
-
-  console.log(newBook);
-  createBookFunct();
-});
-
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
+  createBook() {
+    const container = document.createElement("div");
+    container.className = "book-card";
+    container.innerHTML = `
+        <p class="book-title">${this.title}</p>
+        <p class="book-author">${this.author}</p>
+        <p class="book-pages">${this.pages}</p>
+        <button class="btn">${this.isRead}</button>
+        <button class="btn" id="remove">Remove</button>
+      `;
+    document.getElementById("grid").appendChild(container);
+  }
 }
-
-const createBookFunct = (Book.prototype.createBook = function () {
-  const container = document.createElement("div");
-  container.className = "book-card";
-  container.innerHTML = `
-      <p class="book-title">${title.value}</p>
-      <p class="book-author">${author.value}</p>
-      <p class="book-pages">${pages.value}</p>
-    `;
-  document.getElementById("grid").appendChild(container);
-});
-
-/*
-TODO LIST
-1. Use array data to create new book elements
-2. IF Submit is clicked = >
-3. Create new div with class of book-card
-4. Place div inside the books-grid div
-4. Add P element inside the div element with a class of title
-    add the book title to the P element
-5. Add P element inside the div element with a class of author
-    add the book author to the P element
-6. Add P element inside the div element with a class of pages
-    add the book pages inside the div element
-7. add Button element with "read-status" class
-    add read 
-8. add button element with "remove" class
-    add remove
-9. close the modal
-    disable overlay 
-    set active to 0
-*/
 
 //Modals
 openModalButtons.forEach((button) => {
@@ -91,4 +61,18 @@ overlay.addEventListener("click", () => {
   modals.forEach((modal) => {
     closeModal(modal);
   });
+});
+
+const submit = form.addEventListener("submit", function (event) {
+  event.preventDefault(); //Prevents the form from submmitting
+  let title = document.getElementById("title").value;
+  let author = document.getElementById("author").value;
+  let pages = document.getElementById("pages").value;
+  let isRead = document.querySelector('[type="checkbox"]').checked
+    ? "Read"
+    : "Unread";
+
+  const newEntry = new Book(title, author, pages, isRead);
+
+  newEntry.createBook();
 });
